@@ -1,4 +1,1 @@
-const toggle=document.querySelector('.menu-toggle');
-const nav=document.querySelector('.nav');
-toggle.addEventListener('click',()=>nav.classList.toggle('open'));
-document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+const btn=document.querySelector('.menu-toggle'),nav=document.querySelector('.nav');btn&&btn.addEventListener('click',()=>nav.classList.toggle('open'));document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));document.getElementById('signupForm').addEventListener('submit',e=>{e.preventDefault();alert('Richiesta ricevuta. Nel prossimo passaggio collegheremo questo modulo gratuitamente a un archivio online.');});
