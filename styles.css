@@ -128,3 +128,21 @@
   #corsi .course-card img,
   #corsi .course-media img {height:210px}
 }
+
+/* CORSI — più spazio alle immagini, mantenendo i soggetti in alto */
+#corsi .course-grid article .course-image {
+  width:100%;
+  height:400px;
+  object-fit:cover;
+  object-position:center top;
+  display:block;
+}
+#corsi .course-grid article {
+  height:470px;
+}
+@media(max-width:900px){
+  #corsi .course-grid article .course-image {height:350px}
+}
+@media(max-width:600px){
+  #corsi .course-grid article .course-image {height:300px}
+}
