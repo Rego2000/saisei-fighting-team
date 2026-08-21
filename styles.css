@@ -297,3 +297,64 @@
     margin-right:18px;
   }
 }
+
+/* HERO — logo nella parte nera libera a destra */
+#home.hero{position:relative;overflow:hidden}
+#home .hero-logo{
+  position:absolute;
+  z-index:5;
+  width:clamp(180px,22vw,330px);
+  height:auto;
+  right:10%;
+  top:50%;
+  transform:translateY(-50%);
+  object-fit:contain;
+  filter:drop-shadow(0 12px 28px rgba(0,0,0,.45));
+  pointer-events:none;
+}
+
+/* CORSI — più spazio tra categorie e sezione successiva */
+#corsi .course-levels{
+  margin-bottom:76px;
+}
+
+/* PHOTOBOOK */
+#photobook .gallery-grid{
+  margin-top:38px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+}
+#photobook .gallery-grid img{
+  display:block;
+  width:100%;
+  height:360px;
+  object-fit:cover;
+  object-position:center center;
+}
+#photobook .gallery-grid img:hover{
+  transform:scale(1.01);
+  transition:transform .25s ease;
+}
+@media(max-width:900px){
+  #home .hero-logo{
+    width:210px;
+    right:6%;
+  }
+  #corsi .course-levels{margin-bottom:58px}
+  #photobook .gallery-grid img{height:280px}
+}
+@media(max-width:600px){
+  #home .hero-logo{
+    width:150px;
+    right:4%;
+    top:34%;
+    opacity:.92;
+  }
+  #corsi .course-levels{margin-bottom:48px}
+  #photobook .gallery-grid{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  #photobook .gallery-grid img{height:300px}
+}
