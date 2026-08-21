@@ -171,20 +171,20 @@
   </div>
 </section>
 
-<section id="photobook" class="light gallery">
-  <div class="section-head">
-    <div>
-      <div class="eyebrow dark">PHOTOBOOK</div>
-      <h2>IL NOSTRO <em>TEAM.</em></h2>
-    </div>
-    <p>Allenamenti, combattimenti e momenti vissuti insieme.</p>
+<section id="photobook" class="photobook-section">
+  <div class="photobook-heading">
+    <span class="eyebrow">PHOTBOOK</span>
+    <h2>LA NOSTRA <span>GALLERY.</span></h2>
   </div>
-  <div class="gallery-grid">
-    <!-- Per aggiungere nuove foto, inserisci qui un'altra riga <img src="nome-foto.jpg" alt="Descrizione"> -->
-    <img src="fight-2.jpg" alt="Combattimento">
-    <img src="fight-5.jpg" alt="Combattimento">
-    <img src="fight-4.jpg" alt="Combattimento">
-    <img src="gym.jpg" alt="Allenamento">
+  <div class="photobook-carousel" aria-label="Photobook">
+    <div class="photobook-slide is-active"><img class="photobook-image" src="nome-foto.jpg" alt="Descrizione"></div>
+    <div class="photobook-slide"><img class="photobook-image" src="fight-2.jpg" alt="Combattimento"></div>
+    <div class="photobook-slide"><img class="photobook-image" src="fight-5.jpg" alt="Combattimento"></div>
+    <div class="photobook-slide"><img class="photobook-image" src="fight-4.jpg" alt="Combattimento"></div>
+    <div class="photobook-slide"><img class="photobook-image" src="gym.jpg" alt="Allenamento"></div>
+    <button class="photobook-nav photobook-prev" type="button" aria-label="Foto precedente">‹</button>
+    <button class="photobook-nav photobook-next" type="button" aria-label="Foto successiva">›</button>
+    <div class="photobook-dots" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span><span></span></div>
   </div>
 </section>
 
@@ -268,6 +268,47 @@ document.getElementById('signupForm').addEventListener('submit', function(e) {
 
     current = (index + slides.length) % slides.length;
 
+    slides[current].classList.add('is-active');
+    dots[current].classList.add('is-active');
+  }
+
+  function resetTimer(){
+    clearInterval(timer);
+    timer = setInterval(function(){
+      showSlide(current + 1);
+    }, 7000);
+  }
+
+  prev.addEventListener('click', function(){
+    showSlide(current - 1);
+    resetTimer();
+  });
+
+  next.addEventListener('click', function(){
+    showSlide(current + 1);
+    resetTimer();
+  });
+
+  resetTimer();
+})();
+</script>
+
+
+<script>
+(function(){
+  const slides = document.querySelectorAll('.photobook-slide');
+  const dots = document.querySelectorAll('.photobook-dots span');
+  const prev = document.querySelector('.photobook-prev');
+  const next = document.querySelector('.photobook-next');
+  if (!slides.length || !prev || !next) return;
+
+  let current = 0;
+  let timer;
+
+  function showSlide(index){
+    slides[current].classList.remove('is-active');
+    dots[current].classList.remove('is-active');
+    current = (index + slides.length) % slides.length;
     slides[current].classList.add('is-active');
     dots[current].classList.add('is-active');
   }

@@ -550,3 +550,117 @@
   .quote-prev{left:14px;}
   .quote-next{right:14px;}
 }
+
+/* Photobook: carosello singolo, niente griglia */
+.photobook-section{
+  padding:90px 5vw;
+}
+.photobook-heading{
+  margin-bottom:32px;
+}
+.photobook-heading .eyebrow{
+  display:block;
+  color:#ef1b22;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.24em;
+  margin-bottom:10px;
+}
+.photobook-heading h2{
+  margin:0;
+  color:#fff;
+}
+.photobook-heading h2 span{
+  color:#ef1b22;
+}
+.photobook-carousel{
+  position:relative;
+  width:100%;
+  min-height:420px;
+  background:#111;
+  border:1px solid rgba(255,255,255,.12);
+  overflow:hidden;
+}
+.photobook-slide{
+  display:none;
+  width:100%;
+  height:100%;
+  min-height:420px;
+  align-items:center;
+  justify-content:center;
+}
+.photobook-slide.is-active{
+  display:flex;
+}
+.photobook-image{
+  display:block;
+  width:100%;
+  height:100%;
+  min-height:420px;
+  max-height:700px;
+  object-fit:contain;
+  object-position:center;
+  background:#080808;
+}
+.photobook-nav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:4;
+  width:46px;
+  height:46px;
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:50%;
+  background:rgba(0,0,0,.5);
+  color:#fff;
+  font-size:34px;
+  line-height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+.photobook-nav:hover{
+  background:rgba(0,0,0,.78);
+  border-color:rgba(255,255,255,.75);
+}
+.photobook-prev{left:20px;}
+.photobook-next{right:20px;}
+.photobook-nav:focus-visible{
+  outline:2px solid #ef1b22;
+  outline-offset:3px;
+}
+.photobook-dots{
+  position:absolute;
+  left:50%;
+  bottom:18px;
+  transform:translateX(-50%);
+  display:flex;
+  gap:8px;
+  z-index:4;
+}
+.photobook-dots span{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:rgba(255,255,255,.45);
+}
+.photobook-dots span.is-active{
+  background:#ef1b22;
+  transform:scale(1.25);
+}
+@media(max-width:800px){
+  .photobook-section{padding:65px 5vw;}
+  .photobook-carousel,
+  .photobook-slide,
+  .photobook-image{
+    min-height:280px;
+  }
+  .photobook-nav{
+    width:42px;
+    height:42px;
+    font-size:30px;
+  }
+  .photobook-prev{left:12px;}
+  .photobook-next{right:12px;}
+}
