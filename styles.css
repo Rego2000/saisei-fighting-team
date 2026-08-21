@@ -860,3 +860,66 @@ footer .footer-logo img,
     height:39px;
   }
 }
+
+/* V28 — icona guantone minimal, stile outline */
+.quote-nav,
+.photobook-nav{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  padding:0;
+  width:70px;
+  height:60px;
+  cursor:pointer;
+}
+
+.glove-icon{
+  width:62px;
+  height:44px;
+  overflow:visible;
+  transition:transform .2s ease, filter .2s ease;
+  filter:drop-shadow(0 2px 2px rgba(0,0,0,.3));
+}
+
+.glove-main,
+.glove-cuff{
+  fill:#ef1b22;
+  stroke:#ef1b22;
+  stroke-width:2;
+  stroke-linejoin:round;
+}
+
+.glove-line{
+  fill:none;
+  stroke:#fff;
+  stroke-width:2.4;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.quote-prev:hover .glove-icon,
+.photobook-prev:hover .glove-icon{
+  transform:translateX(-5px);
+  filter:drop-shadow(0 0 6px rgba(239,27,34,.45));
+}
+
+.quote-next:hover .glove-icon,
+.photobook-next:hover .glove-icon{
+  transform:translateX(5px);
+  filter:drop-shadow(0 0 6px rgba(239,27,34,.45));
+}
+
+@media(max-width:800px){
+  .quote-nav,
+  .photobook-nav{
+    width:54px;
+    height:50px;
+  }
+  .glove-icon{
+    width:50px;
+    height:36px;
+  }
+}
