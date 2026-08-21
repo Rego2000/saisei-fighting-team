@@ -351,3 +351,39 @@
 #istruttori .coach-info{padding:18px 20px 21px}
 #istruttori .coach-info h3{font-size:26px}
 }
+
+/* ISTRUTTORI — titolo bianco, margini più ampi e nessun numero */
+#istruttori .section-head{
+  padding-left:28px;
+  padding-right:28px;
+  margin-bottom:42px;
+}
+
+#istruttori .section-head h2{
+  color:#fff;
+}
+
+#istruttori .section-head h2 em{
+  color:#f11920;
+  font-style:normal;
+}
+
+#istruttori .coaches-grid{
+  margin-left:28px;
+  margin-right:28px;
+}
+
+#istruttori .coach-info{
+  gap:0;
+}
+
+@media(max-width:600px){
+  #istruttori .section-head{
+    padding-left:18px;
+    padding-right:18px;
+  }
+  #istruttori .coaches-grid{
+    margin-left:18px;
+    margin-right:18px;
+  }
+}
