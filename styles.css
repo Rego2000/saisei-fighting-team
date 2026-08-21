@@ -664,3 +664,36 @@
   .photobook-prev{left:12px;}
   .photobook-next{right:12px;}
 }
+
+/* Footer: logo e nome leggermente più grandi */
+footer .footer-brand img,
+.footer-brand img,
+.site-footer .footer-brand img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+footer .footer-brand,
+.footer-brand,
+.site-footer .footer-brand {
+  transform: scale(1.08);
+  transform-origin: left center;
+}
+footer .footer-brand strong,
+.footer-brand strong,
+.site-footer .footer-brand strong {
+  font-size: 18px;
+}
+@media (max-width: 800px) {
+  footer .footer-brand img,
+  .footer-brand img,
+  .site-footer .footer-brand img {
+    width: 58px;
+    height: 58px;
+  }
+  footer .footer-brand strong,
+  .footer-brand strong,
+  .site-footer .footer-brand strong {
+    font-size: 17px;
+  }
+}
