@@ -95,6 +95,8 @@
     <div class="quote-slide"><img src="team.jpg" alt="Squadra Saisei Fighting Team"></div>
     <div class="quote-slide"><img src="gym.jpg" alt="Allenamento del Saisei Fighting Team"></div>
     <div class="quote-slide"><img src="fight-2.jpg" alt="Combattimento"></div>
+    <button class="quote-nav quote-prev" type="button" aria-label="Foto precedente">‹</button>
+    <button class="quote-nav quote-next" type="button" aria-label="Foto successiva">›</button>
     <div class="quote-dots" aria-hidden="true">
       <span class="is-active"></span><span></span><span></span><span></span>
     </div>
@@ -253,19 +255,41 @@ document.getElementById('signupForm').addEventListener('submit', function(e) {
 (function(){
   const slides = document.querySelectorAll('.quote-slide');
   const dots = document.querySelectorAll('.quote-dots span');
+  const prev = document.querySelector('.quote-prev');
+  const next = document.querySelector('.quote-next');
   if (!slides.length) return;
 
   let current = 0;
+  let timer;
 
-  setInterval(function(){
+  function showSlide(index){
     slides[current].classList.remove('is-active');
     dots[current].classList.remove('is-active');
 
-    current = (current + 1) % slides.length;
+    current = (index + slides.length) % slides.length;
 
     slides[current].classList.add('is-active');
     dots[current].classList.add('is-active');
-  }, 10000);
+  }
+
+  function resetTimer(){
+    clearInterval(timer);
+    timer = setInterval(function(){
+      showSlide(current + 1);
+    }, 7000);
+  }
+
+  prev.addEventListener('click', function(){
+    showSlide(current - 1);
+    resetTimer();
+  });
+
+  next.addEventListener('click', function(){
+    showSlide(current + 1);
+    resetTimer();
+  });
+
+  resetTimer();
 })();
 </script>
 
