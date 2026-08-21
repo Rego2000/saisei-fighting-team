@@ -158,18 +158,52 @@
 #corsi .course-row{
   display:grid;
   grid-template-columns:1fr 42%;
-  min-height:300px;
+  min-height:360px;
   border:1px solid #292929;
   background:#111;
   overflow:hidden;
+  position:relative;
+  transition:transform .35s ease, border-color .35s ease;
+}
+#corsi .course-row:hover{
+  transform:translateY(-3px);
+  border-color:#f11920;
 }
 
 #corsi .course-copy{
-  padding:34px 38px;
+  padding:46px 52px;
   display:flex;
   flex-direction:column;
-  justify-content:space-between;
+  justify-content:center;
+  position:relative;
   min-width:0;
+  overflow:hidden;
+}
+#corsi .course-copy::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:4px;
+  height:100%;
+  background:#f11920;
+  transform:scaleY(.18);
+  transform-origin:center;
+  transition:transform .45s ease;
+}
+#corsi .course-row:hover .course-copy::before{
+  transform:scaleY(1);
+}
+#corsi .course-copy::after{
+  content:"";
+  position:absolute;
+  right:-35px;
+  bottom:-75px;
+  width:210px;
+  height:210px;
+  border:1px solid rgba(241,25,32,.22);
+  border-radius:50%;
+  box-shadow:0 0 0 32px rgba(241,25,32,.025), 0 0 0 64px rgba(241,25,32,.018);
 }
 
 #corsi .course-number{
@@ -177,21 +211,38 @@
   font-size:13px;
   font-weight:900;
   letter-spacing:1px;
+  position:absolute;
+  top:32px;
+  left:52px;
 }
 
 #corsi .course-copy h3{
-  margin:0 0 14px;
-  font-size:48px;
-  line-height:.95;
+  margin:0 0 18px;
+  font-size:clamp(42px,4.1vw,68px);
+  line-height:.88;
   color:#fff;
+  letter-spacing:-1.5px;
+  max-width:90%;
 }
 
 #corsi .course-copy p{
   margin:0;
-  max-width:650px;
+  max-width:590px;
   color:#bdbdbd;
   font-size:16px;
   line-height:1.55;
+}
+#corsi .course-copy h3::after{
+  content:"";
+  display:block;
+  width:54px;
+  height:3px;
+  margin-top:20px;
+  background:#f11920;
+  transition:width .35s ease;
+}
+#corsi .course-row:hover .course-copy h3::after{
+  width:105px;
 }
 
 #corsi .course-photo{
@@ -240,10 +291,11 @@
 @media(max-width:900px){
   #corsi .course-row{
     grid-template-columns:1fr 45%;
-    min-height:260px;
+    min-height:310px;
   }
-  #corsi .course-copy{padding:26px}
-  #corsi .course-copy h3{font-size:38px}
+  #corsi .course-copy{padding:38px 32px}
+  #corsi .course-number{left:32px;top:24px}
+  #corsi .course-copy h3{font-size:42px}
   #corsi .course-levels{grid-template-columns:repeat(2,1fr)}
   #corsi .course-levels>div:nth-child(2){border-right:0}
   #corsi .course-levels>div:nth-child(-n+2){border-bottom:1px solid #292929}
@@ -254,8 +306,9 @@
     grid-template-columns:1fr;
     min-height:0;
   }
-  #corsi .course-copy{min-height:220px;padding:24px}
-  #corsi .course-copy h3{font-size:34px}
+  #corsi .course-copy{min-height:230px;padding:58px 24px 30px;justify-content:center}
+  #corsi .course-number{left:24px;top:20px}
+  #corsi .course-copy h3{font-size:38px}
   #corsi .course-photo{height:260px;min-height:260px}
   #corsi .course-levels{grid-template-columns:1fr}
   #corsi .course-levels>div{
