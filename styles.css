@@ -333,3 +333,21 @@
   }
   #photobook .gallery-grid img{height:300px}
 }
+
+/* ALLENATORI */
+#istruttori.coaches-section{padding-top:90px;padding-bottom:90px}
+#istruttori .section-head{margin-bottom:42px}
+#istruttori .coaches-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+#istruttori .coach-card{border:1px solid #292929;background:#111;overflow:hidden}
+#istruttori .coach-photo{width:100%;aspect-ratio:4/5;background:#050505}
+#istruttori .coach-info{display:flex;align-items:center;gap:18px;padding:22px 24px 25px}
+#istruttori .coach-info span{color:#f11920;font-size:13px;font-weight:900}
+#istruttori .coach-info h3{margin:0;color:#fff;font-size:30px;line-height:1}
+@media(max-width:900px){#istruttori .coaches-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){
+#istruttori.coaches-section{padding-top:65px;padding-bottom:65px}
+#istruttori .coaches-grid{grid-template-columns:1fr;gap:14px}
+#istruttori .coach-photo{aspect-ratio:16/10}
+#istruttori .coach-info{padding:18px 20px 21px}
+#istruttori .coach-info h3{font-size:26px}
+}
