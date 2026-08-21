@@ -820,3 +820,43 @@ footer .footer-logo img,
     height:35px;
   }
 }
+
+/* V27 — guantoni da boxe più realistici e riconoscibili */
+.glove-icon{
+  width:64px;
+  height:48px;
+  fill:#ef1b22;
+  overflow:visible;
+  transition:transform .2s ease, filter .2s ease;
+  filter:drop-shadow(0 2px 2px rgba(0,0,0,.4));
+}
+.glove-detail{
+  fill:none;
+  stroke:#fff;
+  stroke-width:2.3;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  opacity:.82;
+}
+.glove-cuff{
+  fill:#ef1b22;
+  stroke:#fff;
+  stroke-width:1.8;
+  stroke-linejoin:round;
+}
+.quote-prev:hover .glove-icon,
+.photobook-prev:hover .glove-icon{
+  transform:translateX(-5px) rotate(-2deg);
+  filter:drop-shadow(0 0 6px rgba(239,27,34,.5));
+}
+.quote-next:hover .glove-icon,
+.photobook-next:hover .glove-icon{
+  transform:translateX(5px) rotate(2deg);
+  filter:drop-shadow(0 0 6px rgba(239,27,34,.5));
+}
+@media(max-width:800px){
+  .glove-icon{
+    width:52px;
+    height:39px;
+  }
+}
