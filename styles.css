@@ -146,3 +146,121 @@
 @media(max-width:600px){
   #corsi .course-grid article .course-image {height:300px}
 }
+
+/* CORSI — nuovo layout verticale: testo a sinistra, foto completa a destra */
+#corsi .course-list{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  margin-top:42px;
+}
+
+#corsi .course-row{
+  display:grid;
+  grid-template-columns:1fr 42%;
+  min-height:300px;
+  border:1px solid #292929;
+  background:#111;
+  overflow:hidden;
+}
+
+#corsi .course-copy{
+  padding:34px 38px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  min-width:0;
+}
+
+#corsi .course-number{
+  color:#f11920;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+#corsi .course-copy h3{
+  margin:0 0 14px;
+  font-size:48px;
+  line-height:.95;
+  color:#fff;
+}
+
+#corsi .course-copy p{
+  margin:0;
+  max-width:650px;
+  color:#bdbdbd;
+  font-size:16px;
+  line-height:1.55;
+}
+
+#corsi .course-photo{
+  min-height:300px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#050505;
+  overflow:hidden;
+}
+
+#corsi .course-photo img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center center;
+}
+
+#corsi .course-levels{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  margin-top:14px;
+  border:1px solid #292929;
+}
+
+#corsi .course-levels>div{
+  padding:22px 24px;
+  border-right:1px solid #292929;
+}
+
+#corsi .course-levels>div:last-child{border-right:0}
+
+#corsi .course-levels strong{
+  display:block;
+  color:#fff;
+  font-size:22px;
+  margin-bottom:8px;
+}
+
+#corsi .course-levels span{
+  color:#858585;
+  font-size:12px;
+}
+
+@media(max-width:900px){
+  #corsi .course-row{
+    grid-template-columns:1fr 45%;
+    min-height:260px;
+  }
+  #corsi .course-copy{padding:26px}
+  #corsi .course-copy h3{font-size:38px}
+  #corsi .course-levels{grid-template-columns:repeat(2,1fr)}
+  #corsi .course-levels>div:nth-child(2){border-right:0}
+  #corsi .course-levels>div:nth-child(-n+2){border-bottom:1px solid #292929}
+}
+
+@media(max-width:600px){
+  #corsi .course-row{
+    grid-template-columns:1fr;
+    min-height:0;
+  }
+  #corsi .course-copy{min-height:220px;padding:24px}
+  #corsi .course-copy h3{font-size:34px}
+  #corsi .course-photo{height:260px;min-height:260px}
+  #corsi .course-levels{grid-template-columns:1fr}
+  #corsi .course-levels>div{
+    border-right:0;
+    border-bottom:1px solid #292929;
+  }
+  #corsi .course-levels>div:last-child{border-bottom:0}
+}
