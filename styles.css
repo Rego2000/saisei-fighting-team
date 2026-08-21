@@ -264,3 +264,36 @@
   }
   #corsi .course-levels>div:last-child{border-bottom:0}
 }
+
+/* CORSI — titolo più leggibile e maggiore respiro dai margini */
+#corsi .section-head{
+  padding-left:28px;
+  padding-right:28px;
+}
+
+#corsi .section-head h2{
+  color:#fff;
+}
+
+#corsi .section-head h2 em{
+  color:#f11920;
+  font-style:normal;
+}
+
+#corsi .course-list,
+#corsi .course-levels{
+  margin-left:28px;
+  margin-right:28px;
+}
+
+@media(max-width:600px){
+  #corsi .section-head{
+    padding-left:18px;
+    padding-right:18px;
+  }
+  #corsi .course-list,
+  #corsi .course-levels{
+    margin-left:18px;
+    margin-right:18px;
+  }
+}
