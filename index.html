@@ -88,7 +88,25 @@
   </div>
 </section>
 
-<section class="quote"><div><img src="fighter.jpg" alt="Atleta del team"></div><article><div class="eyebrow">LA MENTALITÀ</div><h2>OLTRE<br><em>I TUOI LIMITI.</em></h2><p>Ogni allenamento è un passo avanti. Costanza, rispetto e determinazione: dentro e fuori dal ring.</p><a href="#iscrizione">INIZIA IL TUO PERCORSO →</a></article></section>
+
+<section class="quote">
+  <div class="quote-gallery" aria-label="Galleria Saisei Fighting Team">
+    <div class="quote-slide is-active"><img src="fighter.jpg" alt="Atleta del Saisei Fighting Team"></div>
+    <div class="quote-slide"><img src="team.jpg" alt="Squadra Saisei Fighting Team"></div>
+    <div class="quote-slide"><img src="gym.jpg" alt="Allenamento del Saisei Fighting Team"></div>
+    <div class="quote-slide"><img src="fight-2.jpg" alt="Combattimento"></div>
+    <div class="quote-dots" aria-hidden="true">
+      <span class="is-active"></span><span></span><span></span><span></span>
+    </div>
+  </div>
+  <article>
+    <div class="eyebrow">LA MENTALITÀ</div>
+    <h2>OLTRE<br><em>I TUOI LIMITI.</em></h2>
+    <p>Ogni allenamento è un passo avanti. Costanza, rispetto e determinazione: dentro e fuori dal ring.</p>
+    <a href="#iscrizione">INIZIA IL TUO PERCORSO →</a>
+  </article>
+</section>
+
 
 <section id="orari" class="light schedule">
 <div class="eyebrow dark">ALLENAMENTI</div>
@@ -228,6 +246,27 @@ document.getElementById('signupForm').addEventListener('submit', function(e) {
     '_blank'
   );
 });
+</script>
+
+
+<script>
+(function(){
+  const slides = document.querySelectorAll('.quote-slide');
+  const dots = document.querySelectorAll('.quote-dots span');
+  if (!slides.length) return;
+
+  let current = 0;
+
+  setInterval(function(){
+    slides[current].classList.remove('is-active');
+    dots[current].classList.remove('is-active');
+
+    current = (current + 1) % slides.length;
+
+    slides[current].classList.add('is-active');
+    dots[current].classList.add('is-active');
+  }, 10000);
+})();
 </script>
 
 </body></html>
