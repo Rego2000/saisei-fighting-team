@@ -387,3 +387,14 @@
     margin-right:18px;
   }
 }
+
+/* ISCRIZIONE — sezione SEI PRONTO */
+#iscrizione{
+  scroll-margin-top:90px;
+}
+#iscrizione form small{
+  display:block;
+  margin-top:14px;
+  color:#777;
+  line-height:1.5;
+}

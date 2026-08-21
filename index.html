@@ -14,7 +14,7 @@
 <header class="header">
 <a class="brand" href="#home"><img src="logo.png" alt="Saisei Fighting Team"><span>SAISEI<br><b>FIGHTING TEAM</b></span></a>
 <button class="menu-toggle" aria-label="Menu">☰</button>
-<nav class="nav"><a href="#home">Home</a><a href="#palestra">La palestra</a><a href="#corsi">Corsi</a><a href="#istruttori">Istruttori</a><a href="#orari">Orari</a><a href="#istruttore">Istruttore</a><a href="#photobook">Photobook</a><a href="#contatti">Contatti</a><a class="nav-cta" href="#iscrizione">ISCRIVITI</a></nav>
+<nav class="nav"><a href="#home">Home</a><a href="#palestra">La palestra</a><a href="#corsi">Corsi</a><a href="#istruttori">Istruttori</a><a href="#iscrizione">Iscrizione</a><a href="#orari">Orari</a><a href="#istruttore">Istruttore</a><a href="#photobook">Photobook</a><a href="#contatti">Contatti</a><a class="nav-cta" href="#iscrizione">ISCRIVITI</a></nav>
 </header>
 
 <section id="home" class="hero">
@@ -168,8 +168,8 @@
   </div>
 </section>
 
-<section id="iscrizione" class="signup"><div><div class="eyebrow">INIZIA OGGI</div><h2>SEI PRONTO<br><em>A COMBATTERE?</em></h2><p>Compila la richiesta e ti ricontatteremo per indicarti il corso più adatto.</p></div>
-<form id="signupForm"><div class="form-grid"><input required placeholder="Nome"><input required placeholder="Cognome"><input required type="tel" placeholder="Telefono"><input type="email" placeholder="Email"><select required><option value="">Scegli il corso</option><option>Muay Thai</option><option>K1</option><option>Kickboxing</option><option>Non so, vorrei essere consigliato</option></select><select><option value="">Percorso</option><option>Bambini</option><option>Adulti</option><option>Amatori</option><option>Agonisti</option></select></div><textarea placeholder="Messaggio / note"></textarea><label class="consent"><input required type="checkbox"> Acconsento al contatto per questa richiesta.</label><button class="btn red" type="submit">INVIA RICHIESTA</button><small>Modulo pronto per il collegamento gratuito a un archivio online.</small></form></section>
+<section id="iscrizione" class="signup"><div><div class="eyebrow">ISCRIZIONE</div><h2>SEI PRONTO<br><em>A COMBATTERE?</em></h2><p>Compila la richiesta di iscrizione e ti ricontatteremo per completare il percorso.</p></div>
+<form id="signupForm"><div class="form-grid"><input required placeholder="Nome"><input required placeholder="Cognome"><input required type="tel" placeholder="Telefono"><input type="email" placeholder="Email"><select required><option value="">Scegli il corso</option><option>Muay Thai</option><option>K1</option><option>Kickboxing</option><option>Non so, vorrei essere consigliato</option></select><select><option value="">Percorso</option><option>Bambini</option><option>Adulti</option><option>Amatori</option><option>Agonisti</option></select></div><textarea placeholder="Messaggio / note"></textarea><label class="consent"><input required type="checkbox"> Acconsento al contatto per questa richiesta.</label><button class="btn red" type="submit">INVIA RICHIESTA</button><small>La richiesta viene inviata direttamente tramite WhatsApp. L’iscrizione definitiva verrà confermata dal team.</small></form></section>
 
 <section id="contatti" class="light contact">
 <div>
@@ -199,4 +199,35 @@
 <small>© Saisei Fighting Team</small>
 </footer>
 <script src="script.js"></script>
+
+<script>
+document.getElementById('signupForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const inputs = this.querySelectorAll('input, select, textarea');
+  const nome = inputs[0].value;
+  const cognome = inputs[1].value;
+  const telefono = inputs[2].value;
+  const email = inputs[3].value || 'Non indicata';
+  const corso = inputs[4].value;
+  const percorso = inputs[5].value || 'Non indicato';
+  const note = inputs[6].value || 'Nessuna nota';
+
+  const message =
+    'RICHIESTA DI ISCRIZIONE\n\n' +
+    'Nome: ' + nome + '\n' +
+    'Cognome: ' + cognome + '\n' +
+    'Telefono: ' + telefono + '\n' +
+    'Email: ' + email + '\n' +
+    'Corso: ' + corso + '\n' +
+    'Percorso: ' + percorso + '\n\n' +
+    'Messaggio: ' + note;
+
+  window.open(
+    'https://wa.me/393893108362?text=' + encodeURIComponent(message),
+    '_blank'
+  );
+});
+</script>
+
 </body></html>
