@@ -58,3 +58,33 @@
 .footer-socials{display:flex;gap:18px;justify-content:center;margin-top:8px}
 .footer-socials a:hover{color:#ef1b22}
 @media(max-width:600px){.social-links{grid-template-columns:1fr}}
+
+/* CORSI — immagini uniformi e perfettamente allineate */
+#corsi .course-image,
+#corsi .card img,
+#corsi .course-card img,
+#corsi .course-media img {
+  display:block;
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  object-position:center center;
+  margin:0;
+}
+#corsi .card,
+#corsi .course-card,
+#corsi .course-media {
+  overflow:hidden;
+}
+@media(max-width:900px){
+  #corsi .course-image,
+  #corsi .card img,
+  #corsi .course-card img,
+  #corsi .course-media img {height:230px}
+}
+@media(max-width:600px){
+  #corsi .course-image,
+  #corsi .card img,
+  #corsi .course-card img,
+  #corsi .course-media img {height:210px}
+}
