@@ -147,6 +147,9 @@
   #corsi .course-grid article .course-image {height:300px}
 }
 
+/* CORSI — leggermente più aria tra la sezione bianca e "DISCIPLINE" */
+#corsi{padding-top:22px}
+
 /* CORSI — nuovo layout verticale: testo a sinistra, foto completa a destra */
 #corsi .course-list{
   display:flex;
