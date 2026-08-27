@@ -1,0 +1,6 @@
+SAISEI FIGHTING TEAM - SITO WEB
+
+Questa versione include la nuova sezione “BENVENUTI A CASA NOSTRA” al posto della precedente sezione della palestra.
+Il video 1000139923(1).mp4 è inserito nella pagina con autoplay, loop, playsinline e audio disattivato (muted).
+
+Per pubblicare il sito, caricare tutti i file della cartella sullo spazio web mantenendo index.html nella cartella principale.

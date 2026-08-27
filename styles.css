@@ -726,3 +726,42 @@ footer .footer-brand strong,
 #staff .coach-info h3{font-size:26px}
 #staff .staff-single{grid-template-columns:1fr}
 }
+
+
+/* BENVENUTI A CASA NOSTRA */
+.home-gym{
+  padding:110px 8%;
+  display:grid;
+  grid-template-columns:46% 54%;
+  gap:5%;
+  align-items:center;
+  overflow:hidden;
+}
+.home-gym-copy{padding-left:12px}
+.home-gym h2{font-size:clamp(58px,6.2vw,104px);line-height:.86;letter-spacing:-1px}
+.home-gym-copy p{color:#666;line-height:1.8;max-width:620px;margin:26px 0 0}
+.home-gym-copy p + p{margin-top:12px}
+.home-gym-signature{display:flex;align-items:center;gap:16px;margin-top:34px;padding-top:24px;border-top:1px solid #d4d4d2}
+.home-gym-signature img{width:58px;height:58px;object-fit:contain}
+.home-gym-signature strong{display:block;font-family:Anton,Impact,sans-serif;font-size:20px;letter-spacing:.5px}
+.home-gym-signature span{display:block;margin-top:5px;color:#777;font-size:9px;font-weight:800;letter-spacing:1.8px}
+.home-gym-video{position:relative}
+.home-gym-video-frame{position:relative;min-height:650px;background:#050505;overflow:hidden;border:1px solid #1e1e1e;box-shadow:18px 18px 0 #ef1b22}
+.home-gym-video-frame video{display:block;width:100%;height:650px;object-fit:contain;background:#050505}
+.home-gym-video-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.12),transparent 45%,rgba(0,0,0,.72))}
+.home-gym-video-label{position:absolute;left:28px;bottom:28px;color:#fff;font-size:11px;font-weight:900;letter-spacing:2px}
+.home-gym-video-status{position:absolute;right:24px;top:22px;color:#fff;font-size:9px;font-weight:800;letter-spacing:1.5px;background:rgba(0,0,0,.55);padding:9px 11px}
+@media(max-width:900px){
+  .home-gym{grid-template-columns:1fr;padding:75px 7%;gap:55px}
+  .home-gym-video-frame{min-height:560px;box-shadow:12px 12px 0 #ef1b22}
+  .home-gym-video-frame video{height:560px}
+}
+@media(max-width:600px){
+  .home-gym{padding:65px 7%;gap:38px}
+  .home-gym-copy{padding-left:0}
+  .home-gym h2{font-size:17vw}
+  .home-gym-video-frame{min-height:520px;box-shadow:8px 8px 0 #ef1b22}
+  .home-gym-video-frame video{height:520px}
+  .home-gym-video-label{left:18px;bottom:18px;font-size:9px;letter-spacing:1.5px}
+  .home-gym-video-status{right:14px;top:14px;font-size:8px;padding:7px 8px}
+}
